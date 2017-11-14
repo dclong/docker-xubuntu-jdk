@@ -1,4 +1,6 @@
-# Xubuntu with JDK in Docker
+# [dclong/xubuntu-jdk](https://hub.docker.com/r/dclong/xubuntu-jdk/)
+
+Xubuntu with JDK in Docker.
 
 ## Detailed Information
 
