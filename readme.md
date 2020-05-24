@@ -36,24 +36,15 @@ docker pull dclong/xubuntu-jdk
 
 ```
 docker run -d \
+    --hostname xubuntu-jdk \
     --log-opt max-size=50m \
     -p 4000:4000 \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_PASSWORD=`id -un` \
-    -v $HOME:/`id -un` \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/host_home \
     --cap-add=SYS_PTRACE \
-    dclong/xubuntu-jdk
-```
-
-```
-docker run -d \
-    --log-opt max-size=50m \
-    -p 4000:4000 \
-    -e DOCKER_USER_ID=`id -u` 
-    -e DOCKER_USER=`id -un` 
-    -v $HOME/dropbox:/home/`id -un`/Dropbox 
-    --cap-add=SYS_PTRACE 
     dclong/xubuntu-jdk
 ```
 
